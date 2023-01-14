@@ -19,7 +19,7 @@ function Products() {
             <h2>{element.price} $</h2>
             <br></br>
             <h3>{element.category}</h3>
-            <button><Link to={"/productdetails/" + element.id}>Card Details</Link></button>
+            <Link to={"/productdetails/" + element.id}><button>Card Details</button></Link>
           </div>
 
         </div>

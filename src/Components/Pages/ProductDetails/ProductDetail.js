@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import './style.css';
 
 function ProductDetail() {
   const [datam, setDatam] = useState([])
@@ -11,10 +12,16 @@ function ProductDetail() {
       .then(res => setDatam(res))
   }, [id])
   return (
-    <div>
-      ProductDetail
-      <img alt='foto' src={datam.image} />
-    </div>
+    <section className='carddetails'>
+      <div className='main'>
+        <img alt='foto' src={datam.image} />
+        <h1>{datam.title}</h1>
+        <h2>{datam.description}</h2>
+        <h3>Category: {datam.category}</h3>
+        <h2 id='price'>Price: {datam.price}</h2>
+        <Link to={'/'}><button>Back to site</button></Link>
+      </div>
+    </section>
 
   )
 }
